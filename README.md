@@ -169,7 +169,7 @@ $ su student
 Установим все пакеты, необходимые для курса по ассемблеру:
 
 ```
-$ sudo apt-get install nasm binutils make gcc
+$ sudo apt-get install git nasm binutils make gcc
 ```
 
 Если вы планируете также писать C++ на виртуалке, то:
