@@ -67,7 +67,7 @@ $ bootvm
 
 Когда виртуалка запустилась, Вы увидите что-то вроде такого:
 
-![Установщик](./assets/1-install.png)
+![Установщик](./assets/1-install-wizard.png)
 
 Тут главное выбрать `Graphical Install`.
 
