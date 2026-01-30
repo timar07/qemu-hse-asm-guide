@@ -23,16 +23,6 @@ sudo apt install git gcc-multilib
 cd /usr/local/lib
 ```
 
-Создаем свою папку чтобы не захламлять корень системной папки (может потребовать пароль)
-```
-sudo mkdir build_asm
-```
-
-Переходим в нее
-```
-cd build_asm
-```
-
 Клонируем рпепозиторий (может потребовать пароль)
 ```
 sudo git clone https://github.com/foured/build_asm.git
