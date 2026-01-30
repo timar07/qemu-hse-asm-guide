@@ -6,7 +6,7 @@
 Если вы продвинутый 🤙🤙🤙 пользователь терминала на Mac, то у Вас уже стоит пакетник `brew`, но, скорее всего, нет. Поэтому пишем в терминал:
 
 ```
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 И перезагрузите терминал. Просто закройте и откройте. Можно даже не перезагружать макбук))
@@ -14,7 +14,7 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 Теперь у вас должна работать команда
 
 ```
-$ brew -h
+brew -h
 ```
 
 Если он пишет что-то типа "bash: brew: command not found", то Вы что-то сделали не так.
@@ -22,19 +22,19 @@ $ brew -h
 Теперь установите сам QEMU:
 
 ```
-$ brew install qemu
+brew install qemu
 ```
 
 Если он что-то спросит и выведет что-то вроде `Continue? [Y/n]:` пишите `Y`.
 
 Убедитесь, что Вы находитесь в корне:
 ```
-$ cd ~
+cd ~
 ```
 
 Теперь пишите:
 ```
-$ qemu-img create -f qcow2 vm-disk.img 30G
+qemu-img create -f qcow2 vm-disk.img 30G
 ```
 
 Вместо `30G` можете указать любое другое значение -- это то, сколько гигов Вы хотите выделить под виртуалку. Советую зайти в настройки, и убедиться, что у вас там имеется место на SSD.
@@ -43,21 +43,27 @@ $ qemu-img create -f qcow2 vm-disk.img 30G
 Как только оно скачалось, киньте его в `~` следующим образом:
 
 ```
-$ mv ~/Downloads/debian-13.3.0-amd64-netinst.iso ~
+mv ~/Downloads/debian-13.3.0-amd64-netinst.iso ~
 ```
 
 Вот тут можно у флага `-m` можно указать `2048`, тогда виртулака будет жрать всего 2гб. Но лучше все же делать как здесь:
 
 ```
-$ touch bootvm.sh
-$ echo "qemu-system-x86_64 -m 8192 -drive file=vm-disk.img,media=disk -netdev user,id=net0,hostfwd=tcp::2222-:22 -device e1000,netdev=net0 -cdrom debian-13.3.0-amd64-netinst.iso" > bootvm.sh
+touch bootvm.sh
+```
+```
+echo "qemu-system-x86_64 -m 8192 -drive file=vm-disk.img,media=disk -netdev user,id=net0,hostfwd=tcp::2222-:22 -device e1000,netdev=net0 -cdrom debian-13.3.0-amd64-netinst.iso" > bootvm.sh
 ```
 
 Наконец запустите QEMU и молитесь, чтобы оно у вас заработало:
 ```
-$ chmod +x bootvm.sh
-$ sudo ln ~/bootvm.sh /usr/local/bin/bootvm
-$ bootvm
+chmod +x bootvm.sh
+```
+```
+sudo ln ~/bootvm.sh /usr/local/bin/bootvm
+```
+```
+bootvm
 ```
 
 > [!TIP]
@@ -157,11 +163,17 @@ $ bootvm
 Для начала настроим права пользователя:
 
 ```
-$ su root
+su root
+```
 <попросит Вас ввести пароль>
-$ apt-get install sudo
-$ sudo adduser student sudo
-$ su student
+```
+apt-get install sudo
+```
+```
+sudo adduser student sudo
+```
+```
+su student
 ```
 
 Теперь Вы можете пользоваться `sudo`.
@@ -169,13 +181,13 @@ $ su student
 Установим все пакеты, необходимые для курса по ассемблеру:
 
 ```
-$ sudo apt-get install git nasm binutils make gcc
+sudo apt-get install git nasm binutils make gcc
 ```
 
 Если вы планируете также писать C++ на виртуалке, то:
 
 ```
-$ sudo apt-get install g++ cmake
+sudo apt-get install g++ cmake
 ```
 
 Если Вы дошли до сюда, то у Вас все получилось 🎉
