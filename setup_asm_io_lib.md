@@ -13,7 +13,7 @@
 Прежде всего нужно установить необходимые пакеты. Потребуется ввести пароль
 
 ```
-sudo apt install git gcc-multilib lib32-gcc-libs lib32-glibc
+sudo apt install git gcc-multilib
 ```
 
 ## Установочка
