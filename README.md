@@ -66,6 +66,8 @@ sudo ln ~/bootvm.sh /usr/local/bin/bootvm
 bootvm
 ```
 
+Если выдает ошибку `qemu-system-x86_64: -cdrom debian-13.3.0-amd64-netinst.iso: Failed to lock byte 100`, то, загляните [сюда](./qemu-failed-to-lock-bype.md).
+
 > [!TIP]
 > Везде, где `sudo` просит Ваш пароль (пин код от ноута), вводите его, это не мошенники.
 
