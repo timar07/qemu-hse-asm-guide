@@ -141,6 +141,9 @@ bootvm
 
 # Подключение через SSH в VSCode
 
+> [!IMPORTANT]  
+> Учтите, что всегда, при подключении через SSH, у вас должна в фоне работать виртулка!
+
 Откройте RemoteSSH (в левом нижне уголке VSCode):
 
 ![RemoteSSH](./assets/13-remote-ssh.png)
